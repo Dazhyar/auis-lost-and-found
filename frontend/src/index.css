@@ -1,0 +1,191 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Lexend:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap');
+
+@theme {
+  --color-auis-blue: #002D72;
+  --color-auis-blue-dark: #001a45;
+  --color-auis-gold: #D4AF37;
+  --color-auis-gold-light: #ebd079;
+  --color-auis-gray-light: #f5f7fa;
+  --color-auis-gray-dark: #1a202c;
+  --color-auis-glass: rgba(255, 255, 255, 0.08);
+  --color-auis-glass-border: rgba(255, 255, 255, 0.15);
+  --color-auis-card: rgba(255, 255, 255, 0.95);
+
+  --font-sans: "Lexend", sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+}
+
+@layer base {
+  @layer base {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Lexend", sans-serif;
+      background-color: var(--color-auis-gray-light);
+      color: var(--color-auis-gray-dark);
+      -webkit-font-smoothing: antialiased;
+      background-image:
+        radial-gradient(circle at 15% 50%, rgba(212, 175, 55, 0.05), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 45, 114, 0.05), transparent 25%);
+      background-attachment: fixed;
+      overflow-x: hidden;
+    }
+
+    /* Global Accessibility Focus Ring */
+    *:focus-visible {
+      outline: 2px solid var(--color-auis-blue);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    /* Enforce cursor pointer on all buttons globally */
+    button {
+      cursor: pointer;
+    }
+  }
+}
+
+@layer components {
+
+  /* Premium Glassmorphism Cards */
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .glass-card:hover {
+    box-shadow: 0 12px 48px rgba(0, 45, 114, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  /* Deep Blue Dashboard Hero */
+  .hero-gradient {
+    background: linear-gradient(to bottom right, #001f52, var(--color-auis-blue), #003b96);
+    color: white;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    background-color: var(--color-auis-gold);
+    color: var(--color-auis-blue-dark);
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.2);
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-auis-gold-light);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: var(--color-auis-blue);
+    font-weight: 600;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background-color: #f9fafb;
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+
+  /* Form Inputs */
+  .input-glass {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(4px);
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.15s;
+  }
+
+  .input-glass:focus {
+    outline: none;
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.3);
+  }
+
+  /* Badges */
+  .badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+}
+
+/* Shimmer Loading Effect */
+.shimmer-bg {
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 1000px 100%;
+}
+
+/* Hide scrollbar for clean horizontal streams */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

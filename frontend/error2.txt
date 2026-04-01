@@ -1,0 +1,22 @@
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/MSI - RTX/.gemini/antigravity/scratch/auis_new_project/frontend/src/components/Navbar.jsx:151:23: ERROR: Unterminated regular expression[39m
+file: [36mC:/Users/MSI - RTX/.gemini/antigravity/scratch/auis_new_project/frontend/src/components/Navbar.jsx:151:23[39m
+[33m
+[33mUnterminated regular expression[33m
+149 |                          </div>
+150 |                      </motion.div>
+151 |                      </>
+    |                         ^
+152 |                  )}
+153 |          </AnimatePresence>
+[39m
+    at failureErrorWithLog (C:\Users\MSI - RTX\.gemini\antigravity\scratch\auis_new_project\frontend\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\MSI - RTX\.gemini\antigravity\scratch\auis_new_project\frontend\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Users\MSI - RTX\.gemini\antigravity\scratch\auis_new_project\frontend\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Users\MSI - RTX\.gemini\antigravity\scratch\auis_new_project\frontend\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Users\MSI - RTX\.gemini\antigravity\scratch\auis_new_project\frontend\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:524:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
